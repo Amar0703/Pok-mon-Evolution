@@ -1,0 +1,71 @@
+body {
+  font-family: sans-serif;
+  background: linear-gradient(to bottom right, #fef3c7, #fbcfe8);
+  margin: 0;
+  padding: 20px;
+  text-align: center;
+}
+
+h1 {
+  font-size: 2em;
+  margin-bottom: 30px;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  justify-items: center;
+}
+
+@media (max-width: 600px) {
+  .grid-container {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+.pokemon-card {
+  background-color: #fff;
+  border-radius: 16px;
+  padding: 15px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: transform 0.3s;
+  width: 150px;
+}
+
+.pokemon-card:hover {
+  transform: scale(1.05);
+}
+
+.pokemon-img {
+  width: 100px;
+  height: 100px;
+  transition: transform 0.4s;
+}
+
+.pokemon-name {
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+/* Add to your existing style.css */
+@keyframes evolve {
+  0% {
+    transform: scale(0.6);
+    opacity: 0.2;
+  }
+  60% {
+    transform: scale(1.2);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.evolve-animation {
+  animation: evolve 0.5s ease-out;
+}
